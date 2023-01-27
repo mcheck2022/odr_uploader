@@ -10,7 +10,6 @@ DG_KEY_ASSETS=(
     'Mariano Max'
 )
 
-cashmaps_7eleven_icon vs 7-eleven
 DG_DIC_ASSETS=(
     ['Axion']='cashmaps_libreriared_icon'
     ['Bonafide']='cashmaps_bonafide_icon'
