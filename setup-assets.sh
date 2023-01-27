@@ -7,7 +7,6 @@ declare -A DG_DIC_ASSETS
 DG_KEY_ASSETS=(
     'Axion'
     'Bonafide'
-    '7-eleven'
     'Mariano Max'
 )
 
@@ -15,7 +14,6 @@ cashmaps_7eleven_icon vs 7-eleven
 DG_DIC_ASSETS=(
     ['Axion']='cashmaps_libreriared_icon'
     ['Bonafide']='cashmaps_bonafide_icon'
-    ['7-eleven']='cashmaps_7eleven_icon'
     ['Mariano Max']='cashmaps_marianomax_icon'
 )
 
