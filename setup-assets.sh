@@ -11,9 +11,9 @@ DG_KEY_ASSETS=(
 )
 
 DG_DIC_ASSETS=(
-    ['Red']='cashmaps_libreriared_icon_pin'
-    ['Bonafide']='cashmaps_bonafide_icon_pin'
-    ['Mariano Max']='cashmaps_marianomax_icon_pin'
+    ['Red']='cashmaps_libreriared_icon_pin_notavailable'
+    ['Bonafide']='cashmaps_bonafide_icon_pin_notavailable'
+    ['Mariano Max']='cashmaps_marianomax_icon_pin_notavailable'
 )
 
 #######################################################################################################################
