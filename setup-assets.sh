@@ -5,19 +5,22 @@ declare -A DG_DIC_ASSETS
 
 
 DG_KEY_ASSETS=(
-    'Axion'
+    'Red'
     'Bonafide'
+    'Mariano Max'
 )
 
-
 DG_DIC_ASSETS=(
-    ['Axion']='cashout_tmp4_axion_icon_pin'
-    ['Bonafide']='cashout_tmp4_bonafide_icon_pin'
+    ['Red']='cashmaps_libreriared_icon_notavailable'
+    ['Bonafide']='cashmaps_bonafide_icon_notavailable'
+    ['Mariano Max']='cashmaps_marianomax_icon_notavailable'
 )
 
 #######################################################################################################################
 # ODR_TYPE = create | replace
+# SKIP_REAL_ODR_UPLOAD = yes | no
 export ODR_TYPE='create'
+export SKIP_REAL_ODR_UPLOAD='yes'
 
 #######################################################################################################################
 # DONT EDIT BELOW THIS POINT
