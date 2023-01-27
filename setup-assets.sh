@@ -5,15 +5,15 @@ declare -A DG_DIC_ASSETS
 
 
 DG_KEY_ASSETS=(
-    'Axion'
+    'Red'
     'Bonafide'
     'Mariano Max'
 )
 
 DG_DIC_ASSETS=(
-    ['Axion']='cashmaps_libreriared_icon'
-    ['Bonafide']='cashmaps_bonafide_icon'
-    ['Mariano Max']='cashmaps_marianomax_icon'
+    ['Red']='cashmaps_libreriared_icon_pin'
+    ['Bonafide']='cashmaps_bonafide_icon_pin'
+    ['Mariano Max']='cashmaps_marianomax_icon_pin'
 )
 
 #######################################################################################################################
