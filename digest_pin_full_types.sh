@@ -107,11 +107,21 @@ digest-assets-android-dimensions() {
                 UPLOAD_ASSET_PATH=$(find $PATH_SEARCH -name $LOCATE)
                 #echo "DG UPLOAD_ASSET_PATH Android: $UPLOAD_ASSET_PATH"
 
-                DIM_NAME=$(echo "$DIM_POINT" | sed "s/drawable-/@/")
+                DIM_NAME=$(echo "$DIM_POINT" | sed "s/drawable-/-/")
                 # 'drawable-ldpi'
 
-                FILENAME_PATH="${1}/${DG_TYPE_SITE}/${DG_PIN_TYPE}/${2}_drawable${DIM_NAME}.png"
+
+                ROOT_ANDROID_SITE="${1}/${DG_TYPE_SITE}/${DG_PIN_TYPE}"
+                echo "1: ${ROOT_ANDROID_SITE}"
+
+
+                ROOT_ANDROID_DIM_SITE="$ROOT_ANDROID_SITE/$DIM_POINT"
+
+                mkdir "$ROOT_ANDROID_DIM_SITE"
+
+                FILENAME_PATH="${ROOT_ANDROID_DIM_SITE}/${2}.png"
                 echo "DG FILENAME_PATH: $FILENAME_PATH"
+                exit 1
 
                 cp "$UPLOAD_ASSET_PATH" "$FILENAME_PATH" 2>/dev/null || :
             done
@@ -137,8 +147,9 @@ digest-assets-ios-dimensions() {
                 UPLOAD_ASSET_PATH=$(find $PATH_SEARCH -name $LOCATE)
                 #echo "DG UPLOAD_ASSET_PATH IOS: $UPLOAD_ASSET_PATH"
 
-                FILENAME_PATH="${1}/${DG_TYPE_SITE}/${DG_PIN_TYPE}/${2}${IOS_SIZE}"
-                #echo "DG FILENAME_PATH: $FILENAME_PATH"
+                EXTENSION_NAME=$DG_DIC_TRANSLATE_ASSETS[$DG_PIN_TYPE]
+                FILENAME_PATH="${1}/${DG_TYPE_SITE}/${DG_PIN_TYPE}/${2}${EXTENSION_NAME}${IOS_SIZE}"
+                # echo "DG FILENAME_PATH: $FILENAME_PATH"
 
                 cp "$UPLOAD_ASSET_PATH" "$FILENAME_PATH" 2>/dev/null || :
             done
@@ -175,7 +186,7 @@ digest-assets-keys () {
             done
         done
 
-        digest-assets-ios-dimensions $DEPLOY_IOS_ASSET_PATH $DIGEST_ASSET $KEY
+        #digest-assets-ios-dimensions $DEPLOY_IOS_ASSET_PATH $DIGEST_ASSET $KEY
         digest-assets-android-dimensions $DEPLOY_AND_ASSET_PATH $DIGEST_ASSET $KEY
 
         find $DEPLOY_ASSET_PATH -type d -empty -delete
@@ -183,10 +194,10 @@ digest-assets-keys () {
 }
 
 
-fetch-env
-setup_dg
+# fetch-env
+# setup_dg
+# fetch-assets-zips
 
-fetch-assets-zips
 digest-assets-keys
 
 upload-directories

@@ -15,10 +15,7 @@ declare -A DG_DIC_ASSETS=(
 # ODR_TYPE = create | replace
 export ODR_TYPE='create'
 # SKIP_REAL_ODR_UPLOAD = yes | no
-export SKIP_REAL_ODR_UPLOAD='no'
-
-
-
+export SKIP_REAL_ODR_UPLOAD='yes'
 
 
 #######################################################################################################################
