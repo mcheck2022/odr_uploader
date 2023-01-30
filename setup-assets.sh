@@ -2,10 +2,12 @@
 
 declare -a DG_KEY_ASSETS=(
     'Red'
+    'Bonafide'
 )
 
 declare -A DG_DIC_ASSETS=(
-    ['Red']='cashmaps_libreriared'
+    ['Red']='cashmaps_mch_tmp5_red'
+    ['Bonafide']='cashmaps_mch_tmp5_bonafide'
 )
 
 #['Bonafide']='cashmaps_bonafide'
@@ -39,7 +41,7 @@ declare -a DG_PIN_TYPES=(
     'Thumb Listado - No Disponible'
 )
 
-declare -A DG_DIC_ASSETS=(
+declare -A DG_DIC_TRANSLATE_ASSETS=(
     ['Pines Default']='_icon_pin'
     ['Pines Default - No Disponible']='_icon_pin_notavailable'
     ['Pines  Selecionados']='_icon_pin_selected'
