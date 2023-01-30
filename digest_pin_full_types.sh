@@ -107,8 +107,11 @@ digest-assets-android-dimensions() {
                 UPLOAD_ASSET_PATH=$(find $PATH_SEARCH -name $LOCATE)
                 #echo "DG UPLOAD_ASSET_PATH Android: $UPLOAD_ASSET_PATH"
 
-                FILENAME_PATH="${1}/${DG_TYPE_SITE}/${DG_PIN_TYPE}/${2}@${DIM_POINT}.png"
-                #echo "DG FILENAME_PATH: $FILENAME_PATH"
+                DIM_NAME=$(echo "$DIM_POINT" | sed "s/drawable-/@/")
+                # 'drawable-ldpi'
+
+                FILENAME_PATH="${1}/${DG_TYPE_SITE}/${DG_PIN_TYPE}/${2}_drawable${DIM_NAME}.png"
+                echo "DG FILENAME_PATH: $FILENAME_PATH"
 
                 cp "$UPLOAD_ASSET_PATH" "$FILENAME_PATH" 2>/dev/null || :
             done
