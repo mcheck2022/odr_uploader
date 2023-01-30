@@ -71,9 +71,13 @@ setup_dg () {
 upload-odr-create-images () {
     echo "DG upload-odr-create-images with argument at: $1"
     echo "odr $ODR_TYPE image --directory $d"
-    RESULTLOG=$(odr $ODR_TYPE image --directory $d)
-    echo $RESULTLOG
-    echo $RESULTLOG >> $DG_ODR_RESULT_LOG
+
+    if [[ $SKIP_REAL_ODR_UPLOAD == "no" ]]
+    then
+        RESULTLOG=$(odr $ODR_TYPE image --directory $d)
+        echo $RESULTLOG
+        echo $RESULTLOG >> $DG_ODR_RESULT_LOG
+    fi
 }
 
 upload-directories () {
