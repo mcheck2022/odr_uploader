@@ -111,7 +111,7 @@ uploader () {
         if [[ $d == *"_android" ]]
         then
             #echo "android: $d"
-            # upload-directories-android $d
+            upload-directories-android $d
         fi
     done
 }

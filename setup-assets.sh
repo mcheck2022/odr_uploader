@@ -6,8 +6,8 @@ declare -a DG_KEY_ASSETS=(
 )
 
 declare -A DG_DIC_ASSETS=(
-    ['Red']='mch_tmp13_red'
-    ['Bonafide']='mch_tmp13_bonafide'
+    ['Red']='mch_tmp15_red'
+    ['Bonafide']='mch_tmp15_bonafide'
 )
 
 
