@@ -52,14 +52,6 @@ declare -A DG_DIC_TRANSLATE_ASSETS=(
     ['Thumb Listado - No Disponible']='_icon_notavailable'
 )
 
-declare -a DG_ANDROID_DIMS=(
-    'drawable-ldpi'
-    'drawable-hdpi'
-    'drawable-mdpi'
-    'drawable-xhdpi'
-    'drawable-xxhdpi'
-    'drawable-xxxhdpi'
-)
 
 declare -a DG_IPHONE_DIM_TYPES=(
     '@1x.png'
