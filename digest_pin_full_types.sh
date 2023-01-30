@@ -112,16 +112,13 @@ digest-assets-android-dimensions() {
 
 
                 ROOT_ANDROID_SITE="${1}/${DG_TYPE_SITE}/${DG_PIN_TYPE}"
-                echo "1: ${ROOT_ANDROID_SITE}"
-
-
                 ROOT_ANDROID_DIM_SITE="$ROOT_ANDROID_SITE/$DIM_POINT"
 
                 mkdir "$ROOT_ANDROID_DIM_SITE"
 
-                FILENAME_PATH="${ROOT_ANDROID_DIM_SITE}/${2}.png"
-                echo "DG FILENAME_PATH: $FILENAME_PATH"
-                exit 1
+                EXTENSION_NAME=$DG_DIC_TRANSLATE_ASSETS[$DG_PIN_TYPE]
+                FILENAME_PATH="${ROOT_ANDROID_DIM_SITE}/${2}${EXTENSION_NAME}.png"
+                #echo "DG FILENAME_PATH: $FILENAME_PATH"
 
                 cp "$UPLOAD_ASSET_PATH" "$FILENAME_PATH" 2>/dev/null || :
             done
@@ -186,7 +183,7 @@ digest-assets-keys () {
             done
         done
 
-        #digest-assets-ios-dimensions $DEPLOY_IOS_ASSET_PATH $DIGEST_ASSET $KEY
+        digest-assets-ios-dimensions $DEPLOY_IOS_ASSET_PATH $DIGEST_ASSET $KEY
         digest-assets-android-dimensions $DEPLOY_AND_ASSET_PATH $DIGEST_ASSET $KEY
 
         find $DEPLOY_ASSET_PATH -type d -empty -delete
