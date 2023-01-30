@@ -81,7 +81,7 @@ upload-odr-create-images () {
 }
 
 upload-directories-android () {
-    #echo "DG upload-directories at: $1"
+    echo "DG upload-directories at: $1"
 
     find $1 -maxdepth 2 -mindepth 2 -type d | while IFS= read -r d; do
         # echo "aca: $d"
@@ -90,11 +90,12 @@ upload-directories-android () {
 }
 
 upload-directories-ios () {
-    #echo "-->  DG upload-directories at: $1"
+    echo "-->  DG upload-directories at: $1"
 
-    find $1 -maxdepth 3 -mindepth 2 -type d | while IFS= read -r d; do
-        #echo "final aca ios: $d"
-        upload-odr-create-images $d
+    find $1 -maxdepth 2 -mindepth 1 -type d | while IFS= read -r d; do
+        echo "final aca ios: $d"
+        exit 1
+        # upload-odr-create-images $d
     done
 }
 
@@ -212,18 +213,14 @@ digest-assets-keys () {
         digest-assets-ios-dimensions $DEPLOY_IOS_ASSET_PATH $DIGEST_ASSET $KEY
         digest-assets-android-dimensions $DEPLOY_AND_ASSET_PATH $DIGEST_ASSET $KEY
 
-        find $DEPLOY_ASSET_PATH -type d -empty -delete
+        #find $DEPLOY_ASSET_PATH -type d -empty -delete
     done
 }
 
 
 fetch-env
 setup_dg
-fetch-assets-zips
-
 digest-assets-keys
-
 uploader
-
 open $DG_WORKING_DIR
 open $DG_UPLOAD_ASSET_DIR
