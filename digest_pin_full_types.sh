@@ -80,12 +80,44 @@ upload-odr-create-images () {
     fi
 }
 
+upload-directories-android () {
+    echo "DG upload-directories at: $1"
+
+    find $1 -maxdepth 2 -mindepth 2 -type d | while IFS= read -r d; do
+        # echo "aca: $d"
+        upload-odr-create-images $d
+    done
+}
+
+upload-directories-ios () {
+    exit 1
+    echo "DG upload-directories at: $1"
+
+    find $DG_WORKING_DIR -maxdepth 5 -mindepth 4 -type d | while IFS= read -r d; do
+        echo "aca ios: $d"
+        # upload-odr-create-images $d
+    done
+}
+
 upload-directories () {
     echo "DG upload-directories at: $DG_WORKING_DIR"
 
-    find $DG_WORKING_DIR -maxdepth 5 -mindepth 4 -type d | while IFS= read -r d; do
-        upload-odr-create-images $d
+    find $DG_WORKING_DIR -maxdepth 2 -mindepth 2 -type d | while IFS= read -r d; do
+        if [[ $d == *"_ios" ]]
+        then
+            #echo "ios: $d"
+        fi
+
+        if [[ $d == *"_android" ]]
+        then
+            #echo "android: $d"
+            upload-directories-android $d
+        fi
     done
+
+    # find $DG_WORKING_DIR -maxdepth 5 -mindepth 4 -type d | while IFS= read -r d; do
+    #     upload-odr-create-images $d
+    # done
 
     # open $DG_WORKING_DIR
 }
@@ -191,10 +223,13 @@ digest-assets-keys () {
 }
 
 
-# fetch-env
-# setup_dg
-# fetch-assets-zips
+fetch-env
+setup_dg
+fetch-assets-zips
 
 digest-assets-keys
 
+# upload-directories-ios
 upload-directories
+
+# open $DG_WORKING_DIR

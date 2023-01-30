@@ -6,8 +6,8 @@ declare -a DG_KEY_ASSETS=(
 )
 
 declare -A DG_DIC_ASSETS=(
-    ['Red']='mch_tmp7_red'
-    ['Bonafide']='mch_tmp7_bonafide'
+    ['Red']='mch_tmp12_red'
+    ['Bonafide']='mch_tmp12_bonafide'
 )
 
 
@@ -15,7 +15,7 @@ declare -A DG_DIC_ASSETS=(
 # ODR_TYPE = create | replace
 export ODR_TYPE='create'
 # SKIP_REAL_ODR_UPLOAD = yes | no
-export SKIP_REAL_ODR_UPLOAD='yes'
+export SKIP_REAL_ODR_UPLOAD='no'
 
 
 #######################################################################################################################
