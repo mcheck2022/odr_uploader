@@ -70,19 +70,16 @@ setup_dg () {
 
 upload-odr-create-images () {
     echo "DG upload-odr-create-images with argument at: $1"
-    find $1 -maxdepth 1 -mindepth 1 -type d | while IFS= read -r d; do
-        echo "odr $ODR_TYPE image --directory $d"
-        #RESULTLOG=$(odr $ODR_TYPE image --directory $d)
-        #echo $RESULTLOG
-        #echo $RESULTLOG >> $DG_ODR_RESULT_LOG
-    done
+    #echo "odr $ODR_TYPE image --directory $d"
+    #RESULTLOG=$(odr $ODR_TYPE image --directory $d)
+    #echo $RESULTLOG
+    #echo $RESULTLOG >> $DG_ODR_RESULT_LOG
 }
-
 
 upload-directories () {
     echo "DG upload-directories at: $DG_WORKING_DIR"
 
-    find $DG_WORKING_DIR -maxdepth 1 -mindepth 1 -type d | while IFS= read -r d; do
+    find $DG_WORKING_DIR -maxdepth 5 -mindepth 4 -type d | while IFS= read -r d; do
         upload-odr-create-images $d
     done
 
@@ -100,14 +97,14 @@ digest-assets-android-dimensions() {
             do
                 PATH_SEARCH="$DG_UPLOAD_ASSET_DIR/$DG_TYPE_SITE/$DG_PIN_TYPE"
                 LOCATE="$3*$DIM_POINT.png"
-                echo "PATH_SEARCH: $PATH_SEARCH"
-                echo "LOCATE FILE PATTERN: $LOCATE"
+                #echo "PATH_SEARCH: $PATH_SEARCH"
+                #echo "LOCATE FILE PATTERN: $LOCATE"
 
                 UPLOAD_ASSET_PATH=$(find $PATH_SEARCH -name $LOCATE)
-                echo "DG UPLOAD_ASSET_PATH Android: $UPLOAD_ASSET_PATH"
+                #echo "DG UPLOAD_ASSET_PATH Android: $UPLOAD_ASSET_PATH"
 
                 FILENAME_PATH="${1}/${DG_TYPE_SITE}/${DG_PIN_TYPE}/${2}${DIM_POINT}.png"
-                echo "DG FILENAME_PATH: $FILENAME_PATH"
+                #echo "DG FILENAME_PATH: $FILENAME_PATH"
 
                 cp "$UPLOAD_ASSET_PATH" "$FILENAME_PATH" 2>/dev/null || :
             done
@@ -117,7 +114,7 @@ digest-assets-android-dimensions() {
 
 
 digest-assets-ios-dimensions() {
-    # echo "digest-assets-ios-dimensions: $@"
+    echo "digest-assets-ios-dimensions: $@"
 
     for IOS_SIZE in $DG_IPHONE_DIM_TYPES
     do
@@ -127,14 +124,14 @@ digest-assets-ios-dimensions() {
             do
                 PATH_SEARCH="$DG_UPLOAD_ASSET_DIR/$DG_TYPE_SITE/$DG_PIN_TYPE"
                 LOCATE="$3*$IOS_SIZE"
-                echo "PATH_SEARCH: $PATH_SEARCH"
-                echo "LOCATE FILE PATTERN: $LOCATE"
+                #echo "PATH_SEARCH: $PATH_SEARCH"
+                #echo "LOCATE FILE PATTERN: $LOCATE"
 
                 UPLOAD_ASSET_PATH=$(find $PATH_SEARCH -name $LOCATE)
-                echo "DG UPLOAD_ASSET_PATH IOS: $UPLOAD_ASSET_PATH"
+                #echo "DG UPLOAD_ASSET_PATH IOS: $UPLOAD_ASSET_PATH"
 
                 FILENAME_PATH="${1}/${DG_TYPE_SITE}/${DG_PIN_TYPE}/${2}${IOS_SIZE}"
-                echo "DG FILENAME_PATH: $FILENAME_PATH"
+                #echo "DG FILENAME_PATH: $FILENAME_PATH"
 
                 cp "$UPLOAD_ASSET_PATH" "$FILENAME_PATH" 2>/dev/null || :
             done
