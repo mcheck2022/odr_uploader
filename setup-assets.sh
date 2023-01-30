@@ -2,8 +2,8 @@
 
 declare -a DG_KEY_ASSETS=(
     'Red'
-    'Bonafide'
     'Mariano Max'
+    'Bonafide'
     'Kiosko'
     'Santander'
     'HSBC'
@@ -12,8 +12,8 @@ declare -a DG_KEY_ASSETS=(
 
 declare -A DG_DIC_ASSETS=(
     ['Red']='cashmaps_libreriared'
-    ['Bonafide']='cashmaps_bonafide'
     ['Mariano Max']='cashmaps_marianomax'
+    ['Bonafide']='cashmaps_bonafide'
     ['Kiosko']='cashmaps_kiosko'
     ['Santander']='cashmaps_bancosantander'
     ['HSBC']='cashmaps_bancohscb'
