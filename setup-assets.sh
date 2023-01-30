@@ -3,19 +3,28 @@
 declare -a DG_KEY_ASSETS=(
     'Red'
     'Bonafide'
+    'Mariano Max'
+    'Kiosko'
+    'Santander'
+    'HSBC'
+    'Farmacias YZA'
 )
 
 declare -A DG_DIC_ASSETS=(
-    ['Red']='mch_tmp16_red'
-    ['Bonafide']='mch_tmp16_bonafide'
+    ['Red']='cashmaps_libreriared'
+    ['Bonafide']='cashmaps_bonafide'
+    ['Mariano Max']='cashmaps_marianomax'
+    ['Kiosko']='cashmaps_kiosko'
+    ['Santander']='cashmaps_bancosantander'
+    ['HSBC']='cashmaps_bancohscb'
+    ['Farmacias YZA']='cashmaps_farmaciasyza'
 )
-
 
 #######################################################################################################################
 # ODR_TYPE = create | replace
 export ODR_TYPE='create'
 # SKIP_REAL_ODR_UPLOAD = yes | no
-export SKIP_REAL_ODR_UPLOAD='no'
+export SKIP_REAL_ODR_UPLOAD='yes'
 
 
 #######################################################################################################################
