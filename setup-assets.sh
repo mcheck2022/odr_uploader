@@ -6,18 +6,16 @@ declare -a DG_KEY_ASSETS=(
 )
 
 declare -A DG_DIC_ASSETS=(
-    ['Red']='cashmaps_mch_tmp5_red'
-    ['Bonafide']='cashmaps_mch_tmp5_bonafide'
+    ['Red']='mch_tmp5_red'
+    ['Bonafide']='mch_tmp5_bonafide'
 )
 
-#['Bonafide']='cashmaps_bonafide'
-#['Mariano Max']='cashmaps_marianomax'
 
 #######################################################################################################################
 # ODR_TYPE = create | replace
 # SKIP_REAL_ODR_UPLOAD = yes | no
 export ODR_TYPE='create'
-export SKIP_REAL_ODR_UPLOAD='yes'
+#export SKIP_REAL_ODR_UPLOAD='yes'
 
 #######################################################################################################################
 # DONT EDIT BELOW THIS POINT
