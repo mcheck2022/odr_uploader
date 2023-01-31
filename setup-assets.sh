@@ -1,30 +1,24 @@
 #!/bin/zsh
 
 declare -a DG_KEY_ASSETS=(
-    'Red'
-    'Mariano Max'
-    'Bonafide'
-    'Kiosko'
-    'Santander'
-    'HSBC'
-    'Farmacias YZA'
+    'Cartu124'
+    'Hausbrot'
+    'Beer Market'
+    'Pintecord'
 )
 
 declare -A DG_DIC_ASSETS=(
-    ['Red']='cashmaps_libreriared'
-    ['Mariano Max']='cashmaps_marianomax'
-    ['Bonafide']='cashmaps_bonafide'
-    ['Kiosko']='cashmaps_kiosko'
-    ['Santander']='cashmaps_bancosantander'
-    ['HSBC']='cashmaps_bancohscb'
-    ['Farmacias YZA']='cashmaps_farmaciasyza'
+    ['Cartu124']='cashmaps_kiosko724'
+    ['Hausbrot']='cashmaps_hausbrot'
+    ['Beer Market']='cashmaps_beermarket'
+    ['Pintecord']='cashmaps_pintecord'
 )
 
 #######################################################################################################################
 # ODR_TYPE = create | replace
 export ODR_TYPE='create'
 # SKIP_REAL_ODR_UPLOAD = yes | no
-export SKIP_REAL_ODR_UPLOAD='yes'
+export SKIP_REAL_ODR_UPLOAD='no'
 
 
 #######################################################################################################################
