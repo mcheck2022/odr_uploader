@@ -11,7 +11,7 @@ export DG_ODR_RESULT_LOG="$(pwd)/result.log"
 
 export DG_UPLOAD_ASSET_DIR="$TMPDIR.deploy_dg"
 
-source ./setup-assets.sh
+source ./setup-pins-assets.sh
 
 #######################################################################################################################
 # COMMAND PRIVATE BEGIN
