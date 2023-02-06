@@ -1,25 +1,10 @@
 #!/bin/zsh
 
 echo "DG: digest.sh Args are: $@"
-
-export DG_PLATFORM_IOS="ios"
-export DG_PLATFORM_AND="android"
-
-export DG_WORKING_DIR="$(pwd)/deploy"
-export DG_ASSETS_DIR="$(pwd)/assets"
-export DG_ODR_RESULT_LOG="$(pwd)/result.log"
-
-export DG_UPLOAD_ASSET_DIR="$TMPDIR.deploy_dg"
-
 source ./setup-pins-assets.sh
 
 #######################################################################################################################
 # COMMAND PRIVATE BEGIN
-
-fetch-env () {
-    echo "DG Envs Vars:"
-    env | grep "DG"
-}
 
 fetch-assets-zips () {
     echo "DG fetch-assets-zips at: $DG_ASSETS_DIR"
