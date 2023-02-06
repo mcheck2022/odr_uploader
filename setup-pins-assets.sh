@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+source ./base.sh
+
 declare -a DG_KEY_ASSETS=(
     'Cartu124'
     'Hausbrot'
