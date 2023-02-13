@@ -1,22 +1,17 @@
 #!/bin/zsh
 
-declare -a DG_KEY_ASSETS=(
-    'Cartu124'
-    'Hausbrot'
-    'Beer Market'
-    'Pintecord'
-)
+source ./base.sh
 
+declare -a DG_KEY_ASSETS=(
+    'Mercado Express'
+)
 declare -A DG_DIC_ASSETS=(
-    ['Cartu124']='cashmaps_kiosko724'
-    ['Hausbrot']='cashmaps_hausbrot'
-    ['Beer Market']='cashmaps_beermarket'
-    ['Pintecord']='cashmaps_pintecord'
+    ['Mercado Express']='cashmaps_mpexpress'
 )
 
 #######################################################################################################################
-# ODR_TYPE = create | replace
-export ODR_TYPE='create'
+# ODR_TYPE = create | update
+export ODR_TYPE='update'
 # SKIP_REAL_ODR_UPLOAD = yes | no
 export SKIP_REAL_ODR_UPLOAD='no'
 
@@ -50,20 +45,4 @@ declare -A DG_DIC_TRANSLATE_ASSETS=(
     ['Pines Selecionados - No Disponible']='_icon_pin_selected_notavailable'
     ['Thumb Listado']='_icon'
     ['Thumb Listado - No Disponible']='_icon_notavailable'
-)
-
-
-declare -a DG_IPHONE_DIM_TYPES=(
-    '@1x.png'
-    '@2x.png'
-    '@3x.png'
-)
-
-declare -a DG_ANDROID_DIMS=(
-    'drawable-ldpi'
-    'drawable-hdpi'
-    'drawable-mdpi'
-    'drawable-xhdpi'
-    'drawable-xxhdpi'
-    'drawable-xxxhdpi'
 )

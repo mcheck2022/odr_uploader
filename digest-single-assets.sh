@@ -1,25 +1,10 @@
 #!/bin/zsh
 
 echo "DG: digest.sh Args are: $@"
-
-export DG_PLATFORM_IOS="ios"
-export DG_PLATFORM_AND="android"
-
-export DG_WORKING_DIR="$(pwd)/deploy"
-export DG_ASSETS_DIR="$(pwd)/assets"
-export DG_ODR_RESULT_LOG="$(pwd)/result.log"
-
-export DG_UPLOAD_ASSET_DIR="$TMPDIR.deploy.dg"
-
-source ./setup-assets.sh
+source ./setup-single-assets.sh
 
 #######################################################################################################################
 # COMMAND PRIVATE BEGIN
-
-fetch-env () {
-    echo "DG Envs Vars:"
-    env | grep "DG"
-}
 
 fetch-assets-zips () {
     echo "DG fetch-assets-zips at: $DG_ASSETS_DIR"
@@ -51,8 +36,13 @@ upload-odr-create-images () {
     echo "DG upload-odr-create-images with argument at: $1"
     find $1 -maxdepth 1 -mindepth 1 -type d | while IFS= read -r d; do
         echo "odr $ODR_TYPE image --directory $d"
-        RESULTLOG=$(odr $ODR_TYPE image --directory $d)
-        echo $RESULTLOG >> $DG_ODR_RESULT_LOG
+
+        if [[ $SKIP_REAL_ODR_UPLOAD == "no" ]]
+        then
+            RESULTLOG=$(odr $ODR_TYPE image --directory $d)
+            echo $RESULTLOG
+            echo $RESULTLOG >> $DG_ODR_RESULT_LOG
+        fi
     done
 }
 
