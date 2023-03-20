@@ -3,10 +3,10 @@
 source ./base.sh
 
 declare -a DG_KEY_ASSETS=(
-    'Mercado Express'
+    'Redbanc'
 )
 declare -A DG_DIC_ASSETS=(
-    ['Mercado Express']='cashmaps_mpexpress'
+    ['Redbanc']='cashmaps_redbanc'
 )
 
 #######################################################################################################################
@@ -41,7 +41,7 @@ declare -a DG_PIN_TYPES=(
 declare -A DG_DIC_TRANSLATE_ASSETS=(
     ['Pines Default']='_icon_pin'
     ['Pines Default - No Disponible']='_icon_pin_notavailable'
-    ['Pines  Selecionados']='_icon_pin_selected'
+    ['Pines Selecionados']='_icon_pin_selected'
     ['Pines Selecionados - No Disponible']='_icon_pin_selected_notavailable'
     ['Thumb Listado']='_icon'
     ['Thumb Listado - No Disponible']='_icon_notavailable'
