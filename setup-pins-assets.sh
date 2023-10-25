@@ -3,17 +3,17 @@
 source ./base.sh
 
 declare -a DG_KEY_ASSETS=(
-    'Redbanc'
+    'Dia'
 )
 declare -A DG_DIC_ASSETS=(
-    ['Redbanc']='cashmaps_redbanc'
+    ['Dia']='test_cashmaps_dia'
 )
 
 #######################################################################################################################
 # ODR_TYPE = create | update
 export ODR_TYPE='update'
 # SKIP_REAL_ODR_UPLOAD = yes | no
-export SKIP_REAL_ODR_UPLOAD='no'
+export SKIP_REAL_ODR_UPLOAD='yes'
 
 
 #######################################################################################################################
@@ -32,7 +32,7 @@ declare -a DG_TYPE_SITES=(
 declare -a DG_PIN_TYPES=(
     'Pines Default'
     'Pines Default - No Disponible'
-    'Pines  Selecionados'
+    'Pines Selecionados'
     'Pines Selecionados - No Disponible'
     'Thumb Listado'
     'Thumb Listado - No Disponible'
